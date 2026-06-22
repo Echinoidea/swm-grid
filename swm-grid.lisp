@@ -9,7 +9,11 @@
           left-group
           right-group
           down-group
-          up-group))
+          up-group
+					send-left-group
+					send-right-group
+					send-down-group
+					send-up-group))
 
 ;;
 ;; Default to a 3x3 grid, opening at center.
@@ -91,7 +95,7 @@
                (lambda (i)
                  (if (eq i curi)
                      (concatenate 'string "^R" (write-to-string i) "^r")
-                   i))
+										 i))
                (range lasti :min firsti)))))
 
 (defun gnav-echo-graph ()
@@ -103,8 +107,21 @@
 
 (defun range (max &key (min 0) (step 1))
   "https://stackoverflow.com/questions/13937520/pythons-range-analog-in-common-lisp"
-   (loop for n from min below max by step
-      collect n))
+	(loop for n from min below max by step
+				collect n))
+
+(defun send-window-to-group (direction)
+	"Send current window to group in direction within MxN grid"
+	(let*
+			((groups (stumpwm::sort-groups (current-screen)))
+			 (curi (position (current-group) groups))
+			 (newi (gnav-step curi direction))
+			 (new-group (nth newi groups)))
+		(progn
+			(if (not (eq newi curi))
+					(stumpwm::gmove new-group))
+			(gnav-echo-graph))))
+
 
 (defcommand left-group ()
   () ""
@@ -121,3 +138,19 @@
 (defcommand up-group ()
   () ""
   (navigate-groups :up))
+
+(defcommand send-left-group ()
+  () ""
+  (send-window-to-group :left))
+
+(defcommand send-right-group ()
+  () ""
+  (send-window-to-group :right))
+
+(defcommand send-down-group ()
+  () ""
+  (send-window-to-group :down))
+
+(defcommand send-up-group ()
+  () ""
+  (send-window-to-group :up))
