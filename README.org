@@ -1,10 +1,31 @@
 #+TITLE: swm-grid
 
+
 [[./example.gif]]
 
 Navigate groups (desktops) in StumpWM as a physical grid. Displays
 desktop grid as a message, with the current group highlighted, while
 navigating.
+
+* Echinoidea Fork
+** Features
+*** Send current window to group
+Adds ~send-left-group~, ~send-right-group~, ~send-up-group~, ~send-down-group~
+
+*** Grid indicator color configuration
+Adds occupied and selected group foreground and background color variables:
+~foreground-color-occupied-group STRING~
+~background-color-occupied-group STRING~
+~foreground-color-selected-group STRING~
+~background-color-selected-group STRING~
+
+Color strings are: ~"black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"~
+
+These variables can be configured at runtime
+
+*** Grid number padding
+If height and width is set above 3x3, the grid would become offset by numbers of differing digit lengths.
+The grid indicator numbers are now left-padded with spaces to match the width of the largest number in the grid.
 
 * Installation & Quickstart
 
