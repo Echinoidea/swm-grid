@@ -23,8 +23,8 @@
 ;; Default to a 3x3 grid, opening at center.
 ;;
 
-(defvar *width*         4)
-(defvar *height*        5)
+(defvar *width*         3)
+(defvar *height*        3)
 (defvar *default-group* 4)
 
 (defvar *background-color-occupied-group* "blue")
