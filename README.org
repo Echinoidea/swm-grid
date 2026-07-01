@@ -49,10 +49,15 @@ In your config.lisp:
 
 * Exported Symbols
 
-| Name              | Description                                                                                   |
-|-------------------+-----------------------------------------------------------------------------------------------|
-| =*width*=         | Width of the grid, in groups (desktops)                                                       |
-| =*height*=        | Height of the grid, in groups (desktops)                                                      |
-| =*default-group*= | Index of the default group. Will be selected after group creation.                            |
-| =create-groups=   | Call once at startup, after setting variables. Creates enough empty groups to fill the grid.  |
-| =DIRECTION-group= | ...where DIRECTION is left, right, up, or down. Navigate to the group in the given direction. |
+| Name                              | Description                                                                                             |
+|-----------------------------------+---------------------------------------------------------------------------------------------------------|
+| =*width*=                           | Width of the grid, in groups (desktops)                                                                 |
+| =*height*=                          | Height of the grid, in groups (desktops)                                                                |
+| =*default-group*=                   | Index of the default group. Will be selected after group creation.                                      |
+| =create-groups=                     | Call once at startup, after setting variables. Creates enough empty groups to fill the grid.            |
+| =DIRECTION-group=                   | ...where DIRECTION is left, right, up, or down. Navigate to the group in the given direction.           |
+| =send-DIRECTION-group=              | ...where DIRECTION is left, right, up, or down. Send active window to the group in the given direction. |
+| =*background-color-occupied-group*= | "black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"                                          |
+| =*foreground-color-occupied-group*= | "black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"                                          |
+| =*foreground-color-selected-group*= | "black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"                                          |
+| =*background-color-selected-group*= | "black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"                                          |
