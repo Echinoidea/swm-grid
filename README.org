@@ -14,10 +14,14 @@ Adds ~send-left-group~, ~send-right-group~, ~send-up-group~, ~send-down-group~
 
 *** Grid indicator color configuration
 Adds occupied and selected group foreground and background color variables:
-~foreground-color-occupied-group STRING~
-~background-color-occupied-group STRING~
-~foreground-color-selected-group STRING~
-~background-color-selected-group STRING~
+
+~swm-grid::*foreground-color-occupied-group* STRING~
+
+~swm-grid::*background-color-occupied-group* STRING~
+
+~swm-grid::*foreground-color-selected-group* STRING~
+
+~swm-grid::*background-color-selected-group* STRING~
 
 Color strings are: ~"black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"~
 
